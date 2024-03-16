@@ -1,0 +1,18 @@
+{
+  "testnet": {
+    "registry_stake": {
+      "code_id": null,
+      "addresses": {},
+      "proposal": {
+        "store_code": 56941
+      }
+    },
+    "wrapper_osmosis": {
+      "code_id": null,
+      "addresses": {},
+      "proposal": {
+        "store_code": 56942
+      }
+    }
+  }
+}

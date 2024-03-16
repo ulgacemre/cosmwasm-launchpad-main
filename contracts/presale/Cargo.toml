@@ -1,0 +1,42 @@
+[package]
+name = "presale"
+version = "0.1.0"
+authors = ["Terraform Labs, PTE."]
+edition = "2018"
+description = "Null"
+license = "MIT"
+
+exclude = [
+  # Those files are rust-optimizer artifacts. You might want to commit them for convenience but they should not be part of the source code publication.
+  "contract.wasm",
+  "hash.txt",
+]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+# for quicker tests, cargo test --lib
+# for more explicit tests, cargo test --features=backtraces
+backtraces = ["cosmwasm-std/backtraces"]
+
+[dependencies]
+cw2 = { version = "0.15.1" }
+cw20 = { version = "0.15.1" }
+cosmwasm-std = { version = "1.1.4" }
+cosmwasm-storage = { version = "1.1.4", features = ["iterator"] }
+cw-storage-plus = { version = "0.15.1" }
+integer-sqrt = "0.1.5"
+schemars = "0.8.11"
+serde = { version = "1.0.103", default-features = false, features = ["derive"] }
+thiserror = { version = "1.0.37" }
+# cosmwasm-bignumber = "2.2.0"
+vesting = { path = "../vesting", default-features = false, version = "0.1.0"}
+hex = "0.4.3"
+sha2 = { version = "0.10.6", default-features = false }
+
+[dev-dependencies]
+cosmwasm-schema = "1.1.4"
+cosmwasm-storage = { version = "1.1.4" }
